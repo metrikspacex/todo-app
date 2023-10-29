@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
-npm run eslint
-npm run prettier
-npm run test
+
+pnpm eslint
+pnpm prettier
+pnpm test
+
+echo ""
+echo "---------------------------"
+echo "|Success - Welcome to push|"
+echo "---------------------------"
+echo ""

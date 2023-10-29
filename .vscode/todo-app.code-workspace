@@ -33,10 +33,12 @@
       "**/.eslintcache": true,
       "**/.eslintignore": true,
       "**/.git": true,
+      "**/.gitignore": true,
       "**/.gitkeep": true,
       "**/.prettierignore": true,
       "**/.prettierrc": true,
-      "**/pnpm-lock.yaml": false,
+      "**/node_modules": false,
+      "**/pnpm-lock.yaml": true,
     },
 
     // Editor

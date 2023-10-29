@@ -4,7 +4,12 @@ export default defineBuildConfig({
   alias: {},
   clean: true,
   declaration: true,
-  entries: ["src/index"],
+  entries: [
+    {
+      format: "cjs",
+      input: "src/index",
+    },
+  ],
   hooks: {},
   outDir: "dist",
   rollup: {
@@ -12,7 +17,7 @@ export default defineBuildConfig({
     esbuild: {
       minify: false,
       sourcemap: true,
-      target: "node18",
+      target: ["node18"],
     },
     inlineDependencies: true,
   },

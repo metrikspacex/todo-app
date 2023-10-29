@@ -48,12 +48,12 @@
     "url": "git+https://github.com/metrikspacex/todo-app.git"
   },
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
+    "build": "pnpm unbuild",
     "eslint": "eslint --cache --max-warnings 0 .",
-    "play": "jiti dist",
+    "gr": "jiti ./src/index",
     "prepack": "rm -rf dist && pnpm build",
     "prettier": "prettier --check .",
+    "stub": "pnpm unbuild --stub",
     "test": "pnpm test:typecheck && pnpm eslint && pnpm test:unit && pnpm test:package",
     "test:package": "publint --strict",
     "test:typecheck": "tsc -p tsconfig.json --noEmit",

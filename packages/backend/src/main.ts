@@ -1,7 +1,7 @@
-/* eslint-disable n/no-missing-import */
-import { HelloController } from "@components/hello.controller";
 import { Module } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
+
+import { HelloController } from "@components/hello.controller";
 
 @Module({
   controllers: [HelloController],
