@@ -36,7 +36,7 @@
       "**/.gitkeep": true,
       "**/.prettierignore": true,
       "**/.prettierrc": true,
-      "**/pnpm-lock.yaml": true,
+      "**/pnpm-lock.yaml": false,
     },
 
     // Editor
