@@ -1,5 +1,33 @@
 {
+  "name": "@metrikspacex/todo-app-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "homepage": "https://metrikspacex.github.io/todo-app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metrikspacex/todo-app.git",
+    "directory": "packages/frontend"
+  },
+  "license": "MIT",
   "author": "Matthew Mason",
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "eslint": "eslint --cache --max-warnings 0 .",
+    "prettier": "prettier --check .",
+    "preview": "vite preview",
+    "test": "pnpm test:typecheck && pnpm eslint && pnpm test:unit && pnpm test:package",
+    "test:cypress": "pnpm test:cypress:component && pnpm test:cypress:e2e",
+    "test:cypress:component": "",
+    "test:cypress:e2e": "",
+    "test:package": "publint --strict",
+    "test:typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:ui": "vitest --ui",
+    "test:unit": "vitest --run --reporter=verbose",
+    "test:watch": "vitest"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@tanstack/react-query": "^5.4.3",
@@ -55,30 +83,5 @@
     "vite": "^4.5.0",
     "vite-tsconfig-paths": "^4.2.1",
     "vitest": "^0.34.6"
-  },
-  "homepage": "https://metrikspacex.github.io/todo-app/",
-  "license": "MIT",
-  "name": "@metrikspacex/todo-app-frontend",
-  "private": true,
-  "repository": {
-    "directory": "packages/frontend",
-    "type": "git",
-    "url": "git+https://github.com/metrikspacex/todo-app.git"
-  },
-  "scripts": {
-    "build": "vite build",
-    "dev": "vite",
-    "eslint": "eslint --cache --max-warnings 0 .",
-    "prettier": "prettier --check .",
-    "preview": "vite preview",
-    "test": "pnpm test:typecheck && pnpm eslint && pnpm test:unit && pnpm test:package",
-    "test:package": "publint --strict",
-    "test:typecheck": "tsc -p tsconfig.json --noEmit",
-    "test:ui": "vitest --ui",
-    "test:unit": "vitest --run --reporter=verbose",
-    "test:watch": "vitest"
-  },
-  "sideEffects": false,
-  "type": "module",
-  "version": "0.0.0"
+  }
 }

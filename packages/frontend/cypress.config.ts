@@ -6,20 +6,20 @@ export default defineConfig({
       bundler: "vite",
       framework: "react",
     },
-    downloadsFolder: "",
-    fixturesFolder: "",
-    screenshotsFolder: "",
+    downloadsFolder: "./cypress/downloads",
+    fixturesFolder: "./cypress/fixtures",
+    screenshotsFolder: "./cypress/screenshots",
     specPattern: [
       "./cypress/integrations/**/*.cy.{js,jsx,ts,tsx}",
       "./cypress/units/**/*.cy.{js,jsx,ts,tsx}",
     ],
-    supportFolder: "",
-    videosFolder: "",
+    supportFolder: "./cypress/support",
+    videosFolder: "./cypress/videos",
   },
   e2e: {
-    downloadsFolder: "",
-    fixturesFolder: "",
-    screenshotsFolder: "",
+    downloadsFolder: "./cypress/downloads",
+    fixturesFolder: "./cypress/fixtures",
+    screenshotsFolder: "./cypress/screenshots",
     setupNodeEvents(on, config) {
       const baseUrl = {
         dev: "http://localhost:5173/age-calculator-app/",
@@ -29,8 +29,7 @@ export default defineConfig({
       return config;
     },
     specPattern: ["cypress/e2e/**/*.cy.{js,jsx,ts,tsx}"],
-    supportFolder: "",
-    videosFolder: "",
+    supportFolder: "./cypress/support",
+    videosFolder: "./cypress/videos",
   },
-  env: {},
 });

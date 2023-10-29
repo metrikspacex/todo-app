@@ -45,7 +45,7 @@ export default defineConfig(
       appType: "spa",
       base,
       build: {
-        assetsDir: resolve(__dirname, "src", "assets"),
+        assetsDir: "./src/assets",
         copyPublicDir: true,
         emptyOutDir: true,
         outDir: resolve(__dirname, "dist"),
