@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "noEmit": true,
+    "paths": {
+      "@components/*": [
+        "../src/components/*"
+      ],
+      "@hooks/*": [
+        "../src/hooks/*"
+      ],
+      "@pages/*": [
+        "../src/pages/*"
+      ],
+      "@routes/*": [
+        "../src/routes/*"
+      ],
+      "@services/*": [
+        "./src/services/*"
+      ],
+      "@slices/*": [
+        "../src/slices/*"
+      ],
+      "@src/*": [
+        "../src/*"
+      ],
+      "@styles/*": [
+        "../src/styles/*"
+      ],
+      "@utilities/*": [
+        "../src/utilities/*"
+      ]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "ESNext",
+    "types": [
+      "@testing-library/cypress",
+      "cypress"
+    ]
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "../cypress.config.ts"
+  ]
+}

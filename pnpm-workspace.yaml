@@ -1,3 +1,5 @@
 packages:
   - "packages/backend"
+  - "packages/eslint"
   - "packages/frontend"
+  - "packages/tools"

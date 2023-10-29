@@ -15,6 +15,10 @@
       "path": "../packages/backend"
     },
     {
+      "name": "@metrikspacex/todo-app-eslint",
+      "path": "../packages/eslint"
+    },
+    {
       "name": "@metrikspacex/todo-app-frontend",
       "path": "../packages/frontend"
     },
@@ -32,8 +36,6 @@
       "**/.gitkeep": true,
       "**/.prettierignore": true,
       "**/.prettierrc": true,
-      "**/dist": true,
-      "**/node_modules": true,
       "**/pnpm-lock.yaml": true,
     },
 
@@ -310,6 +312,7 @@
     "stylelint.validate": [ "css", "scss" ],
 
     // Vitest
+    "vitest.changeBackgroundColor": true,
     "vitest.enable": true,
   }
 }
