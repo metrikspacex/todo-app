@@ -1,51 +1,56 @@
 import { Command } from "commander";
-
-import type { ActionCreatorOptions } from "../types/action-creator";
+import type { ActionCreatorOptions } from "./gre.d";
 
 function actionThrow(program: () => Command) {
   try {
     program();
-  } catch {
-    throw new Error("Function not implemented.");
+  } catch (error: any) {
+    throw new Error(error).message;
   }
 }
 
 const actionCreator = ({
   actionFunction: _actionFunction,
   argumentType: _type,
-  description,
-  name,
+  description: _description,
+  name: _name,
   program,
 }: ActionCreatorOptions) => {
   actionThrow(() => {
     return program
-      .argument(`${name}`, description ?? `Create a react ${name}`)
-      .action((message: string) => {
-        console.log(message);
+      .command("component")
+      .description("Generates a react component")
+      .argument("<string>", "name of react component")
+      .option("--n", "name of the component")
+      .option("--p", "path to create the component")
+      .action(() => {
+        console.log("HI");
       });
   });
 };
 
-export const bootstrap = async () => {
-  const program: Command = new Command();
+const bootstrap = async () => {
+  const program = new Command();
   program
     .name("Generate React Elements")
     .description(
       `
-        Utility for todo - app - frontend project,
+        Utility for todo-app-frontend project,
         creating react elements in a similar structure;
       `
     )
     .version("0.0.0");
 
   actionCreator({
-    actionFunction: (message: string) => {
+    actionFunction: (message) => {
       console.log(message);
     },
     argumentType: "string",
     name: "component",
     program,
   });
-
-  program.parse(process.argv);
 };
+
+bootstrap().catch((error) => {
+  console.trace(error);
+});

@@ -1,5 +1,53 @@
 {
+  "name": "@metrikspacex/todo-app-tools",
+  "version": "0.0.0",
+  "private": true,
+  "homepage": "https://metrikspacex.github.io/todo-app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metrikspacex/todo-app.git",
+    "directory": "packages/tools"
+  },
+  "license": "MIT",
   "author": "Matthew Mason",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": null,
+    "./gre": {
+      "import": {
+        "types": "./dist/gre.d.ts",
+        "default": "./dist/gre.mjs"
+      },
+      "require": {
+        "types": "./dist/gre.d.cts",
+        "default": "./dist/gre.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "gre": "./dist/gre.cjs"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "pnpm unbuild",
+    "eslint": "eslint --cache --max-warnings 0 .",
+    "gre": "jiti ./src/gre",
+    "prepack": "rm -rf dist && pnpm build",
+    "prettier": "prettier --check .",
+    "stub": "pnpm unbuild --stub",
+    "test": "pnpm test:typecheck && pnpm eslint && pnpm test:unit && pnpm test:package",
+    "test:package": "publint",
+    "test:typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:ui": "vitest --ui",
+    "test:unit": "vitest --run --reporter=verbose",
+    "test:watch": "vitest"
+  },
   "dependencies": {
     "chalk": "5.3.0",
     "chokidar": "3.5.3",
@@ -30,38 +78,5 @@
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vitest": "0.34.6"
-  },
-  "files": [
-    "dist",
-    "bin",
-    "dist",
-    "types",
-    "package.json"
-  ],
-  "homepage": "https://metrikspacex.github.io/todo-app/",
-  "license": "MIT",
-  "name": "@metrikspacex/todo-app-tools",
-  "private": true,
-  "repository": {
-    "directory": "packages/tools",
-    "type": "git",
-    "url": "git+https://github.com/metrikspacex/todo-app.git"
-  },
-  "scripts": {
-    "build": "pnpm unbuild",
-    "eslint": "eslint --cache --max-warnings 0 .",
-    "gr": "jiti ./src/index",
-    "prepack": "rm -rf dist && pnpm build",
-    "prettier": "prettier --check .",
-    "stub": "pnpm unbuild --stub",
-    "test": "pnpm test:typecheck && pnpm eslint && pnpm test:unit && pnpm test:package",
-    "test:package": "publint --strict",
-    "test:typecheck": "tsc -p tsconfig.json --noEmit",
-    "test:ui": "vitest --ui",
-    "test:unit": "vitest --run --reporter=verbose",
-    "test:watch": "vitest"
-  },
-  "sideEffects": false,
-  "type": "module",
-  "version": "0.0.0"
+  }
 }

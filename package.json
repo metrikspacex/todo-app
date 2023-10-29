@@ -1,28 +1,15 @@
 {
-  "author": "Matthew Mason",
-  "dependencies": {
-    "husky": "^8.0.3"
-  },
-  "devDependencies": {
-    "typescript": "^5.2.2",
-    "vite": "^4.5.0",
-    "vitest": "^0.34.6"
-  },
-  "engines": {
-    "node": ">=16.0.0",
-    "pnpm": ">=7.5.0"
-  },
-  "keywords": [ ],
   "name": "@metrikspacex/todo-app-monorepo",
-  "packageManager": "pnpm@8.9.2",
-  "pnpm": {
-    "overrides": { }
-  },
+  "version": "0.0.0",
   "private": true,
+  "keywords": [ ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/metrikspacex/todo-app.git"
   },
+  "author": "Matthew Mason",
+  "sideEffects": false,
+  "type": "module",
   "scripts": {
     "backend": "pnpm -r --parallel --filter='./packages/backend' run dev",
     "build": "pnpm -r --parallel --filter='./packages/*' run build",
@@ -38,9 +25,21 @@
     "prettier": "pnpm -r --parallel --filter='./packages/*' run prettier",
     "preview": "pnpm -r --parallel --filter='./packages/*' run preview",
     "test": "pnpm -r --parallel --filter='./packages/*' run test",
+    "test:commit": "./test-commit.sh",
     "update": "pnpm -r update -i -L"
   },
-  "sideEffects": false,
-  "type": "module",
-  "version": "0.0.0"
+  "dependencies": {
+    "husky": "^8.0.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vitest": "^0.34.6"
+  },
+  "packageManager": "pnpm@8.9.2",
+  "engines": {
+    "node": ">=16.0.0",
+    "pnpm": ">=7.5.0"
+  },
+  "pnpm": { }
 }

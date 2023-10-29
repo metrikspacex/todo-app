@@ -1,5 +1,27 @@
 {
+  "name": "eslint-plugin-todo-app",
+  "version": "0.0.0",
+  "private": true,
+  "homepage": "https://metrikspacex.github.io/todo-app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metrikspacex/todo-app.git",
+    "directory": "packages/eslint"
+  },
+  "license": "MIT",
   "author": "Matthew Mason",
+  "sideEffects": false,
+  "main": "./lib/index.js",
+  "files": [
+    "lib/configs",
+    "lib/index.js",
+    "lib/rules",
+    "package.json"
+  ],
+  "scripts": {
+    "eslint": "eslint --cache --max-warnings 0 .",
+    "prettier": "prettier --check ."
+  },
   "dependencies": {
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
@@ -15,7 +37,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-redux": "^4.0.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-react-refresh": "^0.4.4",
     "eslint-plugin-regexp": "^2.1.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-sonarjs": "^0.21.0",
@@ -27,27 +49,5 @@
   },
   "devDependencies": {
     "prettier": "^3.0.3"
-  },
-  "files": [
-    "lib/configs",
-    "lib/index.js",
-    "lib/rules",
-    "package.json"
-  ],
-  "homepage": "https://metrikspacex.github.io/todo-app/",
-  "license": "MIT",
-  "main": "./lib/index.js",
-  "name": "eslint-plugin-todo-app",
-  "private": true,
-  "repository": {
-    "directory": "packages/eslint",
-    "type": "git",
-    "url": "git+https://github.com/metrikspacex/todo-app.git"
-  },
-  "scripts": {
-    "eslint": "eslint --cache --max-warnings 0 .",
-    "prettier": "prettier --check ."
-  },
-  "sideEffects": false,
-  "version": "0.0.0"
+  }
 }

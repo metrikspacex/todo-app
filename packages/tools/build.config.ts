@@ -6,8 +6,9 @@ export default defineBuildConfig({
   declaration: true,
   entries: [
     {
-      format: "cjs",
-      input: "src/index",
+      cleanDist: true,
+      declaration: true,
+      input: "src/gre",
     },
   ],
   hooks: {},
@@ -20,5 +21,8 @@ export default defineBuildConfig({
       target: ["node18"],
     },
     inlineDependencies: true,
+    output: {
+      banner: "#!/usr/bin/env node",
+    },
   },
 });

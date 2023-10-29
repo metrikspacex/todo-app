@@ -46,9 +46,10 @@
       "source.addMissingImports": true,
       "source.fixAll": false,
       "source.fixAll.eslint": true,
-      "source.fixAll.sortJSON": true,
       "source.fixAll.stylelint": true,
-      "source.organizeImports": true
+      "source.organizeImports": true,
+      "source.sortPackageJson": true,
+      "source.fixAll.sortJSON": false,
     },
     "editor.colorDecorators": false,
     "editor.detectIndentation": false,
@@ -148,6 +149,26 @@
       ],
       "editor.wordWrap": "wordWrapColumn",
       "editor.wordWrapColumn": 80
+    },
+
+    // Formatter Json
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features",
+      "editor.rulers": [
+        120
+      ],
+      "editor.wordWrap": "wordWrapColumn",
+      "editor.wordWrapColumn": 120,
+    },
+
+    // Format JSONC
+    "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features",
+      "editor.rulers": [
+        120
+      ],
+      "editor.wordWrap": "wordWrapColumn",
+      "editor.wordWrapColumn": 120
     },
 
     // Formatter Markdown
@@ -258,6 +279,7 @@
 
     // Json Settings
     "json.format.enable": true,
+    "json.validate.enable": true,
 
     // Typescript Settings
     "typescript.autoClosingTags": true,
@@ -309,6 +331,20 @@
 
     // Tailwind
     "tailwindCSS.rootFontSize": 10,
+
+    // Sort JSON
+    "sortJSON.excludedFiles": [
+      "**/packages.json/**",
+      "../packages/backend/package.json",
+      "../packages/eslint/package.json",
+      "../packages/frontend/package.json",
+      "../packages/tools/package.json",
+      "./package.json",
+      "./packages/backend/package.json",
+      "./packages/eslint/package.json",
+      "./packages/frontend/package.json",
+      "./packages/tools/package.json"
+    ],
 
     // Stylelint
     "stylelint.validate": [ "css", "scss" ],
