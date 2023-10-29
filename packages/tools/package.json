@@ -36,9 +36,8 @@
   ],
   "scripts": {
     "build": "pnpm unbuild",
-    "eslint": "eslint --cache --max-warnings 0 .",
+    "eslint": "eslint --cache --max-warnings 0 --ext cjs,js,jsx,ts,tsx .",
     "gre": "jiti ./src/gre",
-    "prepack": "rm -rf dist && pnpm build",
     "prettier": "prettier --check .",
     "stub": "pnpm unbuild --stub",
     "test": "pnpm test:typecheck && pnpm eslint && pnpm test:unit && pnpm test:package",

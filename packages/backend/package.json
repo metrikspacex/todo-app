@@ -1,5 +1,32 @@
 {
+  "name": "@metrikspacex/todo-app-backend",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "homepage": "https://metrikspacex.github.io/todo-app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metrikspacex/todo-app.git",
+    "directory": "packages/backend"
+  },
+  "license": "MIT",
   "author": "Matthew Mason",
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "eslint": "eslint --cache --max-warnings 0 --ext cjs,js,jsx,ts,tsx .",
+    "prettier": "prettier --check .",
+    "preview": "vite-node dist/main",
+    "preview:build": "pnpm build && pnpm preview",
+    "test": "pnpm test:typecheck && pnpm eslint && pnpm test:unit && pnpm test:package",
+    "test:package": "publint --strict",
+    "test:typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:ui": "vitest --ui",
+    "test:unit": "vitest --run --reporter=verbose",
+    "test:watch": "vitest"
+  },
   "dependencies": {
     "@nestjs/common": "^10.2.7",
     "@nestjs/core": "^10.2.7",
@@ -10,7 +37,6 @@
     "rxjs": "^7.8.1",
     "vite-node": "^0.34.7"
   },
-  "description": "",
   "devDependencies": {
     "@nestjs/cli": "^10.2.0",
     "@nestjs/schematics": "^10.0.2",
@@ -36,31 +62,5 @@
     "vite-plugin-node": "^3.0.2",
     "vite-tsconfig-paths": "^4.2.1",
     "vitest": "^0.34.6"
-  },
-  "homepage": "https://metrikspacex.github.io/todo-app/",
-  "license": "MIT",
-  "name": "@metrikspacex/todo-app-backend",
-  "private": true,
-  "repository": {
-    "directory": "packages/backend",
-    "type": "git",
-    "url": "git+https://github.com/metrikspacex/todo-app.git"
-  },
-  "scripts": {
-    "build": "vite build",
-    "dev": "vite",
-    "eslint": "eslint --cache --max-warnings 0 .",
-    "prettier": "prettier --check .",
-    "preview": "vite-node dist/main",
-    "preview:build": "pnpm build && pnpm preview",
-    "test": "pnpm test:typecheck && pnpm eslint && pnpm test:unit && pnpm test:package",
-    "test:package": "publint --strict",
-    "test:typecheck": "tsc -p tsconfig.json --noEmit",
-    "test:ui": "vitest --ui",
-    "test:unit": "vitest --run --reporter=verbose",
-    "test:watch": "vitest"
-  },
-  "sideEffects": false,
-  "type": "module",
-  "version": "0.0.0"
+  }
 }

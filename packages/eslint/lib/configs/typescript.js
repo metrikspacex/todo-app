@@ -416,11 +416,11 @@ const backendTypescriptRules = Object.assign(standardRules, {
 });
 
 const frontendTypescriptRules = Object.assign(standardRules, {
-  // FRONTEND Typescript - new rules here or overrides
+  // FRONTEND TYPESCRIPT - new rules here or overrides
 });
 
 const toolsTypescriptRules = Object.assign(standardRules, {
-  // TOOLS Typescript - new rules here or overrides
+  // TOOLS TYPESCRIPT - new rules here or overrides
   "@typescript-eslint/comma-dangle": ["off"],
   "@typescript-eslint/explicit-function-return-type": ["off"],
   "@typescript-eslint/explicit-module-boundary-types": ["off"],

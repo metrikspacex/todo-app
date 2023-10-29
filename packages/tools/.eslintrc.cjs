@@ -2,6 +2,7 @@ const { defineConfig } = require("eslint-define-config");
 
 module.exports = defineConfig({
   extends: ["plugin:todo-app/tools"],
-  reportUnusedDisableDirectives: false,
+  reportUnusedDisableDirectives: true,
   root: true,
+  rules: {},
 });

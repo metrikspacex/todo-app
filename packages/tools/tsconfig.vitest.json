@@ -33,6 +33,7 @@
     "useUnknownInCatchVariables": true
   },
   "include": [
+    "vitest",
     "./vitest",
     "./vitest.config.ts"
   ]

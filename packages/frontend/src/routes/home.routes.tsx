@@ -1,6 +1,7 @@
+import type { RouteObject } from "react-router-dom";
+
 import { Layout } from "@pages/home/layout";
 import { Page } from "@pages/home/page";
-import type { RouteObject } from "react-router-dom";
 
 export const homeRoute: RouteObject = {
   children: [
