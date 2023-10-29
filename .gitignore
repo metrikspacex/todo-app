@@ -8,9 +8,6 @@
 # Environment
 **/environments/.env.*.local
 
-# Git
-**/.gitkeep
-
 # Package Managers
 **package-lock.json**
 **pnpm-lock.yaml**
