@@ -1,0 +1,315 @@
+{
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+    ]
+  },
+  "folders": [
+    {
+      "name": "@metrikspacex/todo-app-monorepo",
+      "path": ".."
+    },
+    {
+      "name": "@metrikspacex/todo-app-backend",
+      "path": "../packages/backend"
+    },
+    {
+      "name": "@metrikspacex/todo-app-frontend",
+      "path": "../packages/frontend"
+    },
+    {
+      "name": "@metrikspacex/todo-app-tools",
+      "path": "../packages/tools"
+    }
+  ],
+  "settings": {
+    // Excludes
+    "files.exclude": {
+      "**/.eslintcache": true,
+      "**/.eslintignore": true,
+      "**/.git": true,
+      "**/.gitkeep": true,
+      "**/.prettierignore": true,
+      "**/.prettierrc": true,
+      "**/dist": true,
+      "**/node_modules": true,
+      "**/pnpm-lock.yaml": true,
+    },
+
+    // Editor
+    "editor.codeActionsOnSave": {
+      "source.addMissingImports": true,
+      "source.fixAll": false,
+      "source.fixAll.eslint": true,
+      "source.fixAll.sortJSON": true,
+      "source.fixAll.stylelint": true,
+      "source.organizeImports": true
+    },
+    "editor.colorDecorators": false,
+    "editor.detectIndentation": false,
+    "editor.foldingImportsByDefault": false,
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 22,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.inlineSuggest.enabled": true,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "other": "off",
+      "strings": "off"
+    },
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "editor.suggest.filterGraceful": true,
+    "editor.tabSize": 2,
+    "editor.trimAutoWhitespace": false,
+    "editor.wordBasedSuggestions": false,
+
+    // Emmet
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact",
+      "markdown": "html",
+      "typescript": "typescriptreact",
+      "vue-html": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+
+    // Eslint
+    "eslint.codeActionsOnSave.mode": "all",
+    "eslint.enable": true,
+    "eslint.format.enable": true,
+    "eslint.timeBudget.onFixes": {
+      "error": 6000, // Increase if need
+      "warn": 3000
+    },
+    "eslint.timeBudget.onValidation": {
+      "error": 8000, // Increase if need
+      "warn": 4000
+    },
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+
+    // Files
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+
+    // Formatter HTML
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.rulers": [
+        80
+      ],
+      "editor.wordWrap": "wordWrapColumn",
+      "editor.wordWrapColumn": 80
+    },
+
+    "[github-actions-workflow]": {
+      "diffEditor.ignoreTrimWhitespace": false,
+      "editor.autoIndent": "keep",
+      "editor.defaultFormatter": "docsmsft.docs-yaml",
+      "editor.insertSpaces": true,
+      "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+      },
+      "editor.tabSize": 2,
+    },
+
+    // Formatter Javascript
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.rulers": [
+        80
+      ],
+      "editor.wordWrap": "wordWrapColumn",
+      "editor.wordWrapColumn": 80,
+    },
+
+    // Formatter Javascript - React
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features",
+      "editor.rulers": [
+        80
+      ],
+      "editor.wordWrap": "wordWrapColumn",
+      "editor.wordWrapColumn": 80
+    },
+
+    // Formatter Markdown
+    "[markdown]": {
+      "diffEditor.ignoreTrimWhitespace": false,
+      "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+      "editor.quickSuggestions": {
+        "comments": "off",
+        "other": "off",
+        "strings": "off"
+      },
+      "editor.unicodeHighlight.ambiguousCharacters": false,
+      "editor.unicodeHighlight.invisibleCharacters": false,
+      "editor.wordWrap": "on",
+      "editor.wordWrapColumn": 80
+    },
+
+    // Formatter Typescript
+    "[typescript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+      "editor.rulers": [
+        80
+      ],
+      "editor.wordWrap": "wordWrapColumn",
+      "editor.wordWrapColumn": 80,
+    },
+
+    // Formatter Typescript - React
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+      "editor.rulers": [
+        80
+      ],
+      "editor.wordWrap": "wordWrapColumn",
+      "editor.wordWrapColumn": 80
+    },
+
+    // Formatter Yaml
+    "[yaml]": {
+      "diffEditor.ignoreTrimWhitespace": false,
+      "editor.autoIndent": "keep",
+      "editor.defaultFormatter": "docsmsft.docs-yaml",
+      "editor.insertSpaces": true,
+      "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+      },
+      "editor.tabSize": 2,
+    },
+
+    // HTML Settings
+    "html.autoClosingTags": true,
+    "html.autoCreateQuotes": true,
+    "html.completion.attributeDefaultValue": "doublequotes",
+    "html.format.contentUnformatted": "",
+    "html.format.enable": true,
+    "html.format.extraLiners": "",
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.maxPreserveNewLines": null,
+    "html.format.preserveNewLines": true,
+    "html.format.templating": true,
+    "html.format.unformatted": "",
+    "html.format.unformattedContentDelimiter": "",
+    "html.format.wrapAttributes": "aligned-multiple",
+    "html.format.wrapAttributesIndentSize": 2,
+    "html.format.wrapLineLength": 80,
+    "html.hover.documentation": true,
+    "html.hover.references": true,
+    "html.suggest.html5": true,
+    "html.validate.scripts": true,
+    "html.validate.styles": true,
+
+    // Javascript Settings
+    "javascript.autoClosingTags": true,
+    "javascript.format.enable": true,
+    "javascript.format.insertSpaceAfterCommaDelimiter": true,
+    "javascript.format.insertSpaceAfterConstructor": false,
+    "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+    "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
+    "javascript.format.insertSpaceAfterSemicolonInForStatements": true,
+    "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+    "javascript.format.placeOpenBraceOnNewLineForFunctions": false,
+    "javascript.format.semicolons": "insert",
+    "javascript.preferences.quoteStyle": "double",
+    "javascript.suggest.autoImports": true,
+    "javascript.suggest.classMemberSnippets.enabled": true,
+    "javascript.suggest.completeFunctionCalls": true,
+    "javascript.suggest.completeJSDocs": true,
+    "javascript.suggest.enabled": true,
+    "javascript.suggest.includeAutomaticOptionalChainCompletions": true,
+    "javascript.suggest.includeCompletionsForImportStatements": true,
+    "javascript.suggest.jsdoc.generateReturns": true,
+    "javascript.suggest.names": true,
+    "javascript.suggest.paths": false,
+    "javascript.suggestionActions.enabled": false,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "javascript.validate.enable": true,
+
+    // Json Settings
+    "json.format.enable": true,
+
+    // Typescript Settings
+    "typescript.autoClosingTags": true,
+    "typescript.enablePromptUseWorkspaceTsdk": false,
+    "typescript.format.enable": true,
+    "typescript.format.insertSpaceAfterCommaDelimiter": true,
+    "typescript.format.insertSpaceAfterConstructor": false,
+    "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+    "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
+    "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
+    "typescript.format.insertSpaceAfterTypeAssertion": false,
+    "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+    "typescript.format.insertSpaceBeforeFunctionParenthesis": false,
+    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+    "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
+    "typescript.format.semicolons": "insert",
+    "typescript.preferences.quoteStyle": "double",
+    "typescript.suggest.autoImports": true,
+    "typescript.suggest.classMemberSnippets.enabled": true,
+    "typescript.suggest.completeFunctionCalls": true,
+    "typescript.suggest.completeJSDocs": true,
+    "typescript.suggest.enabled": true,
+    "typescript.suggest.includeAutomaticOptionalChainCompletions": true,
+    "typescript.suggest.includeCompletionsForImportStatements": true,
+    "typescript.suggest.jsdoc.generateReturns": true,
+    "typescript.suggest.objectLiteralMethodSnippets.enabled": true,
+    "typescript.suggest.paths": false,
+    "typescript.suggestionActions.enabled": true,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.validate.enable": true,
+
+    // Workbench
+    "workbench.colorCustomizations": {
+      "sideBarTitle.foreground": "#ffffff",
+      "statusBar.background": "#000000",
+      "statusBar.foreground": "#ffffff",
+      "tab.activeBorder": "#ffffff"
+    },
+    "workbench.editorAssociations": {
+      "*.md": "vscode.markdown.preview.editor"
+    },
+
+    // Tailwind
+    "tailwindCSS.rootFontSize": 10,
+
+    // Stylelint
+    "stylelint.validate": [ "css", "scss" ],
+
+    // Vitest
+    "vitest.enable": true,
+  }
+}

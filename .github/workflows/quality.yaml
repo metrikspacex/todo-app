@@ -1,0 +1,11 @@
+name: quality
+run-name: quality
+on:
+  push:
+    branches: ["main"]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write hello word
+        run: echo Hello, World!

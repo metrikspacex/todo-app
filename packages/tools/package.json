@@ -1,0 +1,16 @@
+{
+  "dependencies": { },
+  "devDependencies": { },
+  "homepage": "https://metrikspacex.github.io/todo-app/",
+  "license": "MIT",
+  "name": "@metrikspacex/todo-app-tools",
+  "private": true,
+  "repository": {
+    "directory": "packages/tools",
+    "type": "git",
+    "url": "git+https://github.com/metrikspacex/todo-app.git"
+  },
+  "scripts": { },
+  "type": "module",
+  "version": "0.0.0"
+}
