@@ -26,7 +26,8 @@
     "test:typecheck": "tsc -p tsconfig.json --noEmit",
     "test:ui": "vitest --ui",
     "test:unit": "vitest --run --reporter=verbose",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "tool:gre": "node node_modules/@metrikspacex/todo-app-tools/dist/gre.mjs"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
