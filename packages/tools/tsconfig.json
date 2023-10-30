@@ -3,6 +3,7 @@
     "allowImportingTsExtensions": true,
     "declaration": true,
     "esModuleInterop": true,
+    "jsx": "react-jsx",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "noEmit": true,
@@ -18,7 +19,9 @@
   },
   "include": [
     "./build.config.ts",
+    "./examples",
+    "./src/gre.d.ts",
     "./src/gre.ts",
-    "./src/gre.d.ts"
+    "./templates",
   ]
 }

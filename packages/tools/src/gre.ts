@@ -1,36 +1,50 @@
+import { resolve } from "node:path";
+import { cwd } from "node:process";
+import { fileURLToPath } from "node:url";
 import { Command } from "commander";
-import type { ActionCreatorOptions } from "./gre.d";
+import fs from "fs-extra";
 
-function actionThrow(program: () => Command) {
-  try {
-    program();
-  } catch (error: any) {
-    throw new Error(error).message;
-  }
-}
+import type { GreMetaData } from "./gre.d";
 
-const actionCreator = ({
-  actionFunction: _actionFunction,
-  argumentType: _type,
-  description: _description,
-  name: _name,
-  program,
-}: ActionCreatorOptions) => {
-  actionThrow(() => {
-    return program
-      .command("component")
-      .description("Generates a react component")
-      .argument("<string>", "name of react component")
-      .option("--n", "name of the component")
-      .option("--p", "path to create the component")
-      .action(() => {
-        console.log("HI");
-      });
+const __currentWorkingDirectory = cwd();
+const __dirname = fileURLToPath(new URL(".", import.meta.url));
+const sources = {
+  components: resolve(__dirname, "../templates/components", "example.tsx"),
+};
+const __metadata = import(resolve(__currentWorkingDirectory, "gre.json"))
+  .catch((_error) => {
+    throw new Error("Mising gre.json at the root of your directory").message;
+  })
+  .then(async (data): Promise<GreMetaData> => {
+    return (await data) as GreMetaData;
   });
+
+const generateComponent = async (
+  args: string,
+  options: { dryRun: boolean; verbose: boolean }
+) => {
+  const componentName = `${args}.tsx`;
+  const metadata = await __metadata;
+  const target = resolve(
+    __currentWorkingDirectory,
+    metadata.component_target,
+    componentName
+  );
+
+  if (options.dryRun) {
+    console.log(`Component: ${componentName}`);
+    console.log(`Copy:      ${sources.components}`);
+    console.log(`Location:  ${target}`);
+    console.log(`Result:    ${target} \n`);
+  } else {
+    fs.copyFileSync(sources.components, target);
+  }
 };
 
-const bootstrap = async () => {
+const bootstrap = () => {
   const program = new Command();
+  console.clear();
+
   program
     .name("Generate React Elements")
     .description(
@@ -39,18 +53,47 @@ const bootstrap = async () => {
         creating react elements in a similar structure;
       `
     )
+    .helpOption("-h --help", "display help for command")
     .version("0.0.0");
 
-  actionCreator({
-    actionFunction: (message) => {
-      console.log(message);
-    },
-    argumentType: "string",
-    name: "component",
-    program,
-  });
+  program
+    .command("component")
+    .description("create react component")
+    .argument("<string>")
+    .option("--dry-run", "mock creation", false)
+    .option("--verbose", "log command", false)
+    .action(
+      async (args: string, options: { dryRun: boolean; verbose: boolean }) => {
+        await generateComponent(args, options);
+      }
+    );
+
+  program
+    .command("hook")
+    .description("create react hook")
+    .action((args, options) => {});
+
+  program
+    .command("page")
+    .description("create react page")
+    .action((args, options) => {});
+
+  program
+    .command("route")
+    .description("create react route")
+    .action((args, options) => {});
+
+  program
+    .command("service")
+    .description("create react service")
+    .action((args, options) => {});
+
+  program
+    .command("slice")
+    .description("create react slice")
+    .action((args, options) => {});
+
+  program.parse();
 };
 
-bootstrap().catch((error) => {
-  console.trace(error);
-});
+bootstrap();
